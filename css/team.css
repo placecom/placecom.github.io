@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+
+html,body{
+
+
+
+	padding: 0 auto;
+	margin:0 auto;
+}
+.team_quote{
+	max-width: 950px;
+	min-width: 50px;
+	 font-family: 'Roboto Slab', serif;
+	font-size: 23px;
+	color: #34495e;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px 0 50px 0;
+}
+#quote_writter{
+	text-align: right;
+	font-size: 15px;
+	color: black;
+	 display:block;
+
+
+
+}
+.team_whole{
+	text-align: center;
+}
+
+.team_title{
+
+	font-family: 'Roboto Slab', serif;
+	font-size: 22px;
+	color: dimgrey;
+
+}
+
+.mail_link{
+
+
+	text-decoration: none;
+	color: #16a085;
+
+}
+
+
+
+.team{
+	width: 180px;
+	 border-left: 4px solid;
+	border-color: #27ae60;
+
+padding-left: 10px;
+	font-family: 'Roboto Slab', serif;
+	font-size: 16px;
+	color: #34495e;
+	line-height: 34px;
+	text-align: left;
+	display: inline-block;
+   margin-left: calc(8% - 5px);
+	margin-right: calc(8% - 5px);
+	margin-bottom: 100px;
+
+
+
+}
+.team_image{
+
+	vertical-align: middle;
+}
+
+
+
+h5{
+	padding-bottom: 50px;
+	overflow: hidden;
+	text-align: center;
+	max-width:800px;
+	min-width:50px;
+	margin: 0 auto;
+
+}
+h5:before,
+h5:after {
+	box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+	background-color: #fff;
+	content: "";
+	display: inline-block;
+	height: 1px;
+	position: relative;
+	vertical-align: middle;
+	width: 50%;
+}
+h5:before {
+	right: 0.5em;
+	margin-left: -50%;
+}
+h5:after {
+	left: 0.5em;
+	margin-right: -50%;
+}
+
+
+.placecom-foot{
+color: #444;
+	font-size: 14px;
+	text-align: center;
+	padding-right: 50px;
+padding-top: 100px;
+font-family: 'Roboto Slab', serif;
+
+
+
+}

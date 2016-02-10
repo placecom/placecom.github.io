@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/page0-menu.css">
+	<link rel="stylesheet" href="css/team.css">
+	<title>Placecom Team</title>
+	<link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon" />
+
+	<script>
+		$.ajax({
+			url: 'https://spreadsheets.google.com/feeds/cells/1B7LKU9uUBMPFfYyqcBY-aXKshDA0IqzlBxGMQIY_964/od6/public/basic?alt=json',
+			type: 'get',
+			dataType: 'jsonp',
+			error: function(jqXHR, textStatus, errorThrown) {
+				console.log('Problem with call to get list of articles\n', errorThrown);
+			},
+			success: function(oxo) {
+				console.log('call success, data is\n', oxo.feed.entry.length);
+
+
+				$.each(oxo.feed.entry, function(i, f) {
+
+
+
+					if (i == 1 || i == 2 || i % 3 == 1 || i % 3 == 2) {
+						return true;
+					}
+
+
+					var tblRow = "<div class='team'>" +
+						"<div><img class='team_image' src='ico/person.png'> " + oxo.feed.entry[i].content.$t + "</div>" +
+						"<div><img class='team_image' src='ico/branch.png'> " + oxo.feed.entry[i + 2].content.$t + " Year </div>" +
+						"<div><img class='team_image' src='ico/mail.png'> " +
+
+						"<a class='mail_link' href=mailto:" + oxo.feed.entry[i + 1].content.$t + ">E-Mail</a></div>" +
+						"</div>"
+					$(tblRow).appendTo(".team_whole");
+				});
+			}
+		});
+
+	</script>
+	<style>
+		.whole-home{
+
+		}
+		.loading-bg {
+			background-color: #EBEBEB;
+			height: 100%;
+			z-index: 999;
+		}
+
+		.loading {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			position: fixed;
+		}
+
+		.loading-bar {
+			display: inline-block;
+			width: 4px;
+			height: 18px;
+			border-radius: 4px;
+			animation: loading 1s ease-in-out infinite;
+		}
+
+		.loading-bar:nth-child(1) {
+			background-color: #3498db;
+			animation-delay: 0;
+		}
+
+		.loading-bar:nth-child(2) {
+			background-color: #c0392b;
+			animation-delay: 0.09s;
+		}
+
+		.loading-bar:nth-child(3) {
+			background-color: #f1c40f;
+			animation-delay: .18s;
+		}
+
+		.loading-bar:nth-child(4) {
+			background-color: #27ae60;
+			animation-delay: .27s;
+		}
+
+		@keyframes loading {
+			0% {
+				transform: scale(1);
+			}
+			20% {
+				transform: scale(1, 2.2);
+			}
+			40% {
+				transform: scale(1);
+			}
+		}
+
+	</style>
+</head>
+
+
+<body>
+	<div class="loading-bg">
+		<div class="loading">
+			<div class="loading-bar"></div>
+			<div class="loading-bar"></div>
+			<div class="loading-bar"></div>
+			<div class="loading-bar"></div>
+		</div>
+	</div>
+
+	<div id='cssmenu'>
+		<ul>
+			<li class='active'><a href='index.html'><span><img src="images/npl1.png" </span></a></li>
+			<li><a href='page1-calendar.html'><span> <img src="ico/cal.png" style="vertical-align:middle;"> Calender</span></a></li>
+			<li><a href='page2-notices.html'><span><img src="ico/notice.png" style="vertical-align:middle;"> Notices</span></a></li>
+			<li><a href='page3-board.html'><span><img src="ico/placed.png" style="vertical-align:middle;"> Placed Board</span></a></li>
+			<li><a href='Team.html'><span><img src="ico/members.png" style="vertical-align:middle;"> Team</span></a></li>
+			<li class='last'><a href='utile-links.html'><span><img src="ico/branch.png" style="vertical-align:middle;"> Utile Links</span></a></li>
+			<li class='last'><a href='index.html#bg-3x'><span><img src="ico/pin.png" style="vertical-align:middle;"> Contact us</span></a></li>
+		</ul>
+	</div>
+	<div class="banner"><img style="max-width: 100%;" src="images/500x214.png"></div>
+
+
+
+
+
+	<div class="team_quote">"Coming together is a beginning. Keeping together is progress. Working together is success."
+		<br><span id="quote_writter"> -- Henry Ford</span></div>
+
+	<div class="team_whole">
+		<div class="hr-h5">
+			<div class="team_title">OFFICER</div>
+			<h5><img class="hr-h5" src="ico/officer.png"></h5>
+		</div>
+		<div class="team">
+			<div class=""><img class="team_image" src="ico/person.png"> Nishi Mahajan</div>
+			<div class=""><img class="team_image" src="ico/mark.png"> TPO</div>
+			<div class=""><img class="team_image" src="ico/mail.png"> placecom@live.com</div>
+
+
+		</div>
+		<br>
+
+		<div class="hr-h5">
+			<div class="team_title">CO_ORDINATORS</div>
+			<h5><img class="hr-h5" src="ico/team.png"></h5>
+		</div>
+
+
+
+
+
+
+	</div>
+
+	<div class="placecom-foot">© JEC / PLACECOM | 2016</div>
+	<script language="javascript" type="text/javascript">
+		$(window).load(function() {
+			$('.loading-bg').fadeOut( "slow" );
+			$('.whole-home').fadeIn( "slow" );
+		});
+
+	</script>
+</body>
+
+</html>
